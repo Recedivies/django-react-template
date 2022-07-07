@@ -112,7 +112,7 @@ venv.bak/
 ### FRONTEND
 ###
 
-.versionsrc.json
+.versionrc.json
 
 # dependencies
 /node_modules
