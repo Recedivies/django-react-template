@@ -122,7 +122,7 @@ Install node dependencies.
 
 ```shell script
 cd frontend
-npm i -f
+npm install
 ```
 
 Run development server in second terminal
@@ -206,6 +206,7 @@ docker exec -it frontend /bin/sh
 
 This repository uses Github Actions to run test and deployment pipeline.  
 `tnd.yml` - runs backend-frontend test separately.
+
 There's also have automatic deploys application to Heroku. You need the autorization token for the deployment.
 
 ```shell
@@ -221,7 +222,7 @@ heroku authorizations:create
 
 Furthermore, There's success/failure notification _discord_ action that make teammates or another developer's work easier to handles mis-communication about merging PRs, as projects become more complex, so too does the process of building and testing the code.
 
-`pipeline.yml` - runs backend and frontend code quality separately.
+`code-quality.yml` - runs backend and frontend code quality separately.
 
 # Production Deployment
 
