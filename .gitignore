@@ -112,6 +112,8 @@ venv.bak/
 ### FRONTEND
 ###
 
+.versionsrc.json
+
 # dependencies
 /node_modules
 /.pnp
