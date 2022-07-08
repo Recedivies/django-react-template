@@ -119,7 +119,7 @@ venv.bak/
 /.pnp
 .pnp.js
 node_modules
-package*
+/package*
 # testing
 /coverage
 
