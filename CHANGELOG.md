@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/Recedivies/django-react-template/compare/v0.0.4...v0.1.0) (2022-07-08)
+
+
+### Features
+
+* added a healh check simple endpoint ([a52c744](https://github.com/Recedivies/django-react-template/commit/a52c744f9411684bd9e854206c1ef1de9d58aa4d))
+
+
+### Bug Fixes
+
+* code format ([8c815ef](https://github.com/Recedivies/django-react-template/commit/8c815ef587c7692f5b01639aac55d7de49f098ea))
+* rollback false ([c30e1b9](https://github.com/Recedivies/django-react-template/commit/c30e1b9b4243a6dcd1987d4b889b18f2780b6615))
+* test fe ([fae5e95](https://github.com/Recedivies/django-react-template/commit/fae5e9509cced6deb206e4cdf61b46bff3d6124a))
+* trigger auto deploys ([d6b3c67](https://github.com/Recedivies/django-react-template/commit/d6b3c67d6665a4d4c7ddd0cc2938c8fa2af8e674))
+
 ### [0.0.4](https://github.com/Recedivies/django-react-template/compare/v0.0.3...v0.0.4) (2022-07-08)
 
 
