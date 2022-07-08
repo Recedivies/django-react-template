@@ -1,0 +1,21 @@
+# FE stuff
+frontend/node_modules
+frontend/build
+# Dev stuff
+.github
+.git
+.gitignore
+venv
+.venv
+README.md
+.vscode
+.idea
+
+# BE stuff
+**/*.pyc
+**/*.pyo
+**/*.mo
+**/__pycache__/
+**/*.md
+backend/db.sqlite3
+backend/docs
