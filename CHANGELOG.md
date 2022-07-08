@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Recedivies/django-react-template/compare/v0.0.3...v0.0.4) (2022-07-08)
+
+
+### Features
+
+* added ci/cd pipeline ([59e58d8](https://github.com/Recedivies/django-react-template/commit/59e58d8bcc9c091f6f1b5a5e5e59550cf0f65426))
+
 ### [0.0.3](https://github.com/Recedivies/django-react-template/compare/v0.0.2...v0.0.3) (2022-07-08)
 
 
