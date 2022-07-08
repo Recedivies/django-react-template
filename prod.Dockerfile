@@ -13,7 +13,7 @@ WORKDIR /app/frontend
 COPY ./frontend/package.json ./
 COPY ./frontend/package-lock.json ./
 
-RUN npm install -f
+RUN npm install
 
 # Add the rest of the code
 COPY . /app/
