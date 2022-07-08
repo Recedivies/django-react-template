@@ -1,0 +1,87 @@
+name: Code Quality Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  Code-Quality-backend:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+
+    timeout-minutes: 5
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      SECRET_KEY: github_actions
+
+    services:
+      postgres:
+        image: postgres:14.0
+        env:
+          POSTGRES_DB: github_actions
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: psycopg2 prerequisites
+        run: sudo apt-get install libpq-dev
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Django Code Quality
+        run: |
+          black . --check
+          isort . --check-only
+          flake8 .
+
+  Code-Quality-frontend:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    timeout-minutes: 5
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: React Code Quality
+        run: |
+          npm run lint
