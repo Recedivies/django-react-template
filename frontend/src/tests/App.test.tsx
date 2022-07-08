@@ -5,6 +5,6 @@ import App from "../components/App";
 
 test("renders learn react link", () => {
   render(<App />);
-  const linkElement = screen.getByText("django-react-docker-heroku-template");
+  const linkElement = screen.getByText("django-react-heroku-template");
   expect(linkElement).toBeInTheDocument();
 });
