@@ -7,3 +7,8 @@ class SimpleAPIView(APIView):
     def get(self, request):
         text = request.query_params.get("text", "")
         return Response({"text": text.upper()}, status=status.HTTP_200_OK)
+
+
+class HealthCheckAPIView(APIView):
+    def get(self, request):
+        return Response("ok", status=status.HTTP_200_OK)

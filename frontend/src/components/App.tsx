@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <pre>django-react-docker-heroku-template</pre>
+        <pre>django-react-heroku-template</pre>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
