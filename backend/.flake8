@@ -1,0 +1,4 @@
+[flake8]
+exclude = .git,*migrations*,db.sqlite3,*sh*,venv,blogs_users.dot
+max-line-length = 119
+ignore = E712, W503

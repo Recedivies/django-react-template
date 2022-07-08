@@ -1,0 +1,15 @@
+[report]
+omit=
+    # virtual environment
+    ./venv/*
+    # static files
+    ./static/*
+    ./staticfiles/*
+    # python files
+    */migrations/*
+    manage.py
+    *settings*
+
+[run]
+include = ./*
+omit = *migrations*, *tests*, *settings*, **__init__.py**
