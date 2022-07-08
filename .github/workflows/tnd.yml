@@ -102,7 +102,7 @@ jobs:
           heroku_email: $HEROKU_EMAIL
           healthcheck: "https://${{ env.HEROKU_APP_NAME }}.herokuapp.com/api/health"
           checkstring: '"ok"'
-          # rollbackonhealthcheckfailed: true
+          rollbackonhealthcheckfailed: true
 
   Discord-Notification:
     if: ${{ github.event_name == 'push' && (!contains(join(github.event.commits[0].message, ''), '#skip')) }}
