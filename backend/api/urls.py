@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 
-from api.views import SimpleAPIView, HealthCheckAPIView
+from api.views import HealthCheckAPIView, SimpleAPIView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
