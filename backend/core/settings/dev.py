@@ -15,7 +15,6 @@ ALLOWED_HOSTS = ["backend", "localhost", "127.0.0.1"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://canteen-compfest.herokuapp.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
