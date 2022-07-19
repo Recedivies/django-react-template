@@ -35,8 +35,8 @@ services:
       context: ./frontend
       dockerfile: dev.Dockerfile
     volumes:
-      - ./frontend/:/usr/src/app
-      - /app/node_modules
+      - ./frontend/:/app/frontend
+      - node-modules:/app/frontend/node_modules
     ports:
       - 3000:3000
     container_name: fe-dev
@@ -57,3 +57,4 @@ services:
 
 volumes:
   postgres-data:
+  node-modules:
