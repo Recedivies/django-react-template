@@ -105,7 +105,7 @@ jobs:
           rollbackonhealthcheckfailed: true
 
   Discord-Notification:
-    if: ${{ github.event_name == 'push' && (contains(join(github.event.commits[0].message, ''), '#deploy')) }}
+    if: ${{ always() && github.event_name == 'push' && (contains(join(github.event.commits[0].message, ''), '#deploy')) }}
     needs: [Deployment]
     runs-on: ubuntu-latest
     env:
@@ -120,7 +120,7 @@ jobs:
 
       - name: Test Success
         uses: rjstone/discord-webhook-notify@v1
-        if: success()
+        if: ${{ needs.Deployment.result == 'success' }}
         with:
           username: GitHub
           avatarUrl: ${{ env.AVATAR_URL }}
@@ -132,7 +132,7 @@ jobs:
 
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1
-        if: failure()
+        if: ${{ needs.Deployment.result == 'failure' }}
         with:
           username: GitHub
           avatarUrl: ${{ env.AVATAR_URL }}
